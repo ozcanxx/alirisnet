@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ─── Aliris Color System ─────────────────────────────────── */
+  --color-midnight:   #0B1929;
+  --color-navy:       #0F2540;
+  --color-navy-card:  #132B4A;
+  --color-teal:       #0E9D87;
+  --color-teal-dim:   #0C7B6B;
+  --color-teal-bright:#2DC5AF;
+  --color-gold:       #C9943A;
+  --color-alabaster:  #F4F1EB;
+  --color-ivory:      #FDFCF9;
+  --color-mist:       #8A9BB0;
+  --color-cloud:      #C8D6E5;
+  --color-ink:        #0B1929;
+  --color-ink-soft:   #4A5A6B;
+
+  /* ─── Typography ─────────────────────────────────────────── */
+  --font-serif: var(--font-dm-serif);
+  --font-sans:  var(--font-space-grotesk);
+
+  /* ─── Aurora animation ───────────────────────────────────── */
+  --animate-aurora: aurora 60s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Aurora keyframes */
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
   }
 }
 
+/* ─── Aurora color variables ─────────────────────────────────
+   The AuroraBackground component uses var(--blue-500) etc.
+   In Tailwind v4 these aren't auto-generated, so we define them here.
+   Values match Tailwind's default color palette.
+───────────────────────────────────────────────────────────── */
+:root {
+  --white:       #ffffff;
+  --black:       #000000;
+  --transparent: transparent;
+  --blue-300:    #93c5fd;
+  --blue-400:    #60a5fa;
+  --blue-500:    #3b82f6;
+  --indigo-300:  #a5b4fc;
+  --violet-200:  #ddd6fe;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), "system-ui", sans-serif;
+  background-color: #FFFFFF;
+  color: #0B1929;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
